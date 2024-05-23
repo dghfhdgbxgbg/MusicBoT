@@ -1,0 +1,28 @@
+{
+    "name": "AMBOT Play",
+    "description": "TV Player Bot for telegram videochats, written in Python with Pyrogram and Py-Tgcalls.",
+    "logo": "https://graph.org/file/ba53a21e7a37ffa66694d.jpg",
+    "keywords": [
+    "python3",
+    "telegram",
+    "AMBOT",
+    "MusicBot",
+    "telegram-bot",
+    "pyrogram"
+    ],
+    "env": {
+      
+    },
+    "buildpacks": [
+          {
+              "url": "heroku/python"
+          },
+          {
+              "url": "heroku/nodejs"
+          },
+          {
+              "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+          }
+      ],
+      "stack": "container"
+  }
