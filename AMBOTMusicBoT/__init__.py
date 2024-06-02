@@ -1,4 +1,4 @@
-import pyromod.listen
+from pyromod import listen
 import asyncio
 import logging
 import os
