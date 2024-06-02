@@ -12,7 +12,7 @@ from pyrogram.types import (
 )
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, CallbackQuery
 from AMBOTMusicBoT.Helpers import admin_check, close_key, is_streaming, stream_on
-from AMBOTMusicBoT.Helpers import _clear_, admin_check, buttons, close_key, gen_thumb, MUSIC
+from AMBOTMusicBoT.Helpers import _clear_, admin_check, buttons, close_key, gen_thumb
 from AMBOTMusicBoT.Helpers import _clear_, admin_check, close_key
 
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
