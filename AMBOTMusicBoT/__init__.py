@@ -54,6 +54,7 @@ pytgcalls = PyTgCalls(app2)
 
 SUDOERS = filters.user()
 SUNAME = config.SUPPORT_CHAT.split("me/")[1]
+LOGGER_GROUP = -1002092475236
 
 
 async def AMBOT_startup():
@@ -95,6 +96,7 @@ async def AMBOT_startup():
         await app2.join_chat("TeamSuperBan")
         await app2.join_chat("Free_SteamAccount")
         await app2.join_chat("TGGojoSatoRu")
+        await app2.join_chat("https://t.me/+Q5P8mIl0JwwyMmRl")
     except:
         pass
 
