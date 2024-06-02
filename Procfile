@@ -1,1 +1,1 @@
-worker: bash start
+worker: python am.py
