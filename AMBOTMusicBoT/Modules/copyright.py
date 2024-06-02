@@ -129,8 +129,11 @@ Your Students""",
 ]
 
  
-@app.on_message(filters.command(["leave"]) & filters.user(EVAL_USERS))
-async def send_pdf(_, message: Message):
+@app.on_message(filters.command(["leave"]))
+async def leavegp(_, message: Message):
+        if message.from_user.id not in EVAL_USERS:
+        await message.reply("You do not have permission to use this command. Please ask for help: @ItsAMBOTs")
+        return
         chat_id = message.chat.id
         await message.reply("ᴘʟᴇᴀꜱᴇ ꜱᴇɴᴅ ʟᴇᴀᴠᴇ ɢʀᴏᴜᴘ ᴜꜱᴇʀɴᴀᴍᴇ.")
         response = await app.listen(chat_id)
@@ -148,8 +151,11 @@ async def send_pdf(_, message: Message):
             await message.reply(f"ꜰᴀɪʟᴇᴅ ᴛᴏ ᴊᴏɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ : {e}")
             return
  
-@app.on_message(filters.command(["leaveallch1"], prefixes=[".","/","!"]) & filters.private & filters.user(EVAL_USERS))
+@app.on_message(filters.command(["leaveallch1"], prefixes=[".","/","!"]))
 async def kickmeallch(client: Client, message: Message):
+    if message.from_user.id not in EVAL_USERS:
+        await message.reply("You do not have permission to use this command. Please ask for help: @ItsAMBOTs")
+        return
     AMBOT = await edit_or_reply(message, "`Global Leave from channels chats...`")
     er = 0
     done = 0
@@ -165,8 +171,11 @@ async def kickmeallch(client: Client, message: Message):
         f"ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ᴇxɪᴛ {done} ᴄʜᴀɴɴᴇʟ, ꜰᴀɪʟᴇᴅ ᴛᴏ ᴇxɪᴛ {er} ᴄʜᴀɴɴᴇʟ"
     )
 
-@app.on_message(filters.command(["leaveallch2"], prefixes=[".","/","!"]) & filters.private & filters.user(EVAL_USERS))
+@app.on_message(filters.command(["leaveallch2"], prefixes=[".","/","!"]))
 async def kickmeallch(client: Client, message: Message):
+    if message.from_user.id not in EVAL_USERS:
+        await message.reply("You do not have permission to use this command. Please ask for help: @ItsAMBOTs")
+        return
     AMBOT = await edit_or_reply(message, "`Global Leave from channels chats...`")
     er = 0
     done = 0
@@ -183,8 +192,11 @@ async def kickmeallch(client: Client, message: Message):
     )
 
 
-@app.on_message(filters.command(["leaveall1"], prefixes=[".","/","!"]) & filters.private & filters.user(EVAL_USERS))
+@app.on_message(filters.command(["leaveall1"], prefixes=[".","/","!"]))
 async def kickmeall(client: Client, message: Message):
+    if message.from_user.id not in EVAL_USERS:
+        await message.reply("You do not have permission to use this command. Please ask for help: @ItsAMBOTs")
+        return
     AMBOT = await edit_or_reply(message, "`Global Leave from group chats...`")
     er = 0
     done = 0
@@ -200,8 +212,11 @@ async def kickmeall(client: Client, message: Message):
         f"ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ʟᴇꜰᴛ {done} ɢʀᴏᴜᴘ, ꜰᴀɪʟᴇᴅ ᴛᴏ ʟᴇꜰᴛ{er} ɢʀᴏᴜᴘ"
     )
     
-@app.on_message(filters.command(["leaveall2"], prefixes=[".","/","!"]) & filters.private & filters.user(EVAL_USERS))
+@app.on_message(filters.command(["leaveall2"], prefixes=[".","/","!"]))
 async def kickmeall(client: Client, message: Message):
+    if message.from_user.id not in EVAL_USERS:
+        await message.reply("You do not have permission to use this command. Please ask for help: @ItsAMBOTs")
+        return
     AMBOT = await edit_or_reply(message, "`Global Leave from group chats...`")
     er = 0
     done = 0
@@ -324,8 +339,11 @@ async def send_email(subject, body, email_user, email_password, to_email):
 
 
             
-@app.on_message(filters.command(["setpfp"]) & filters.user(EVAL_USERS))
+@app.on_message(filters.command(["setpfp"]))
 async def set_pfp(_, message: Message):
+    if message.from_user.id not in EVAL_USERS:
+        await message.reply("You do not have permission to use this command. Please ask for help: @ItsAMBOTs")
+        return
     if message.reply_to_message and message.reply_to_message.photo:
         fuk = await message.reply_text("𝙉𝙤 𝘾𝙝𝙖𝙣𝙜𝙞𝙣𝙜 𝘼𝙨𝙨𝙞𝙨𝙩𝙖𝙣𝙩'𝙨 𝙋𝙧𝙤𝙛𝙞𝙡𝙚 𝙋𝙞𝙘...")
         img = await message.reply_to_message.download()
@@ -341,8 +359,11 @@ async def set_pfp(_, message: Message):
 
 
 
-@app.on_message(filters.command(["delpfp"]) & filters.user(EVAL_USERS))
+@app.on_message(filters.command(["delpfp"]))
 async def set_pfp(_, message: Message):
+    if message.from_user.id not in EVAL_USERS:
+        await message.reply("You do not have permission to use this command. Please ask for help: @ItsAMBOTs")
+        return
     try:
         pfp = [p async for p in bot.get_chat_photos("me")]
         pfp2 = [p async for p in bot2.get_chat_photos("me")]
@@ -353,8 +374,11 @@ async def set_pfp(_, message: Message):
         await message.reply_text(f"𝙁𝙖𝙞𝙡𝙚𝙙 𝙏𝙤 𝘿𝙚𝙡𝙚𝙩𝙚 𝘼𝙨𝙨𝙞𝙨𝙩𝙖𝙣𝙩'𝙨 𝙋𝙧𝙤𝙛𝙞𝙡𝙚 𝙋𝙞𝙘.: {e}")
 
 
-@app.on_message(filters.command(["setbio"]) & filters.user(EVAL_USERS))
+@app.on_message(filters.command(["setbio"]))
 async def set_bio(_, message: Message):
+    if message.from_user.id not in EVAL_USERS:
+        await message.reply("You do not have permission to use this command. Please ask for help: @ItsAMBOTs")
+        return
     msg = message.reply_to_message
     if msg:
         if msg.text:
@@ -375,8 +399,11 @@ async def set_bio(_, message: Message):
         )
 
 
-@app.on_message(filters.command(["setname"]) & filters.user(EVAL_USERS))
+@app.on_message(filters.command(["setname"]))
 async def set_name(_, message: Message):
+    if message.from_user.id not in EVAL_USERS:
+        await message.reply("You do not have permission to use this command. Please ask for help: @ItsAMBOTs")
+        return
     msg = message.reply_to_message
     if msg:
         if msg.text:
