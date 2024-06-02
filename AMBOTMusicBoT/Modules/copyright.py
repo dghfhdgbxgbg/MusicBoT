@@ -336,9 +336,11 @@ async def kickmeall(client: Client, message: Message):
         f"ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ʟᴇꜰᴛ {done} ɢʀᴏᴜᴘ, ꜰᴀɪʟᴇᴅ ᴛᴏ ʟᴇꜰᴛ{er} ɢʀᴏᴜᴘ"
     )
    
-@app.on_message(filters.command(["report"], prefixes=[".","/","!"]) & filters.private & filters.user(EVAL_USERS))
-async def start(client, message): 
-
+@app.on_message(filters.command(["report"], prefixes=[".", "/", "!"]) & filters.private)
+async def report_command(client: Client, message: Message):
+    if message.from_user.id not in EVAL_USERS:
+        await message.reply("You don't have authorization to use this command.")
+        return
     id = message.chat.id
     await message.reply("ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴄᴏᴘʏʀɪɢʜᴛ @ɢʀᴏᴜᴘᴜꜱᴇʀɴᴀᴍᴇ , ɢʀᴏᴜᴘᴜꜱᴇʀɴᴀᴍᴇ, ɢʀᴏᴜᴘ ɪɴᴠɪᴛᴇʟɪɴᴋ")
     response = await app.listen(id)
