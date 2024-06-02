@@ -33,7 +33,6 @@ bs4
 gpytranslate
 telegraph
 wget
-pyromod
 cryptography
 future
 search-engine-parser
