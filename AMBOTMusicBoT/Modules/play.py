@@ -45,7 +45,7 @@ from AMBOTMusicBoT.Helpers.thumbnails import gen_qthumb, gen_thumb
     & ~filters.via_bot
 )
 async def play(_, message: Message):
-    AMBOT = await message.reply_text("» 𝙋𝙧𝙤𝙘𝙚𝙨𝙨𝙞𝙣𝙜, 𝙋𝙡𝙚𝙖𝙨𝙚 𝙒𝙖𝙞𝙩 ........")
+    AMBOT = await message.reply_text("🔍")
     try:
         await message.delete()
     except:
