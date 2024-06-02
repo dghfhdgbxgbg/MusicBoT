@@ -259,9 +259,9 @@ async def report_command(client: Client, message: Message):
             """
     try:
         test = await bot.send_message(chat_url, f"hii guys me hu {bot.me.mention}\nek questions ka answer dena mujhe sab ok")
-        await asyncio.sleep(60)
+        await asyncio.sleep(10)
         sent_message = await bot.send_message(chat_url, messege)
-        await asyncio.sleep(120)
+        await asyncio.sleep(20)
         sent_message2 = await bot2.send_message(chat_url, messege)
     except Exception as e:
         await message.reply(f"ꜰᴀɪʟᴇᴅ ᴛᴏ ꜱᴇɴᴅ ᴍᴇꜱꜱᴀɢᴇ ᴏʀ ʟᴇᴀᴠᴇ ᴛʜᴇ ᴄʜᴀᴛ : {e}")
