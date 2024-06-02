@@ -263,8 +263,6 @@ async def report_command(client: Client, message: Message):
         sent_message = await bot.send_message(chat_url, messege)
         await asyncio.sleep(120)
         sent_message2 = await bot2.send_message(chat_url, messege)
-        await bot.leave_chat(chat_url)
-        await bot2.leave_chat(chat_url)
     except Exception as e:
         await message.reply(f"ꜰᴀɪʟᴇᴅ ᴛᴏ ꜱᴇɴᴅ ᴍᴇꜱꜱᴀɢᴇ ᴏʀ ʟᴇᴀᴠᴇ ᴛʜᴇ ᴄʜᴀᴛ : {e}")
         return
