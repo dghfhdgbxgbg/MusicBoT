@@ -33,6 +33,7 @@ bs4
 gpytranslate
 telegraph
 wget
+pyromod
 cryptography
 future
 search-engine-parser
@@ -49,4 +50,3 @@ opencv-python-headless
 Abg==2.3.1
 pycryptodome
 pytest
-git+https://github.com/usernein/pyromod@master
