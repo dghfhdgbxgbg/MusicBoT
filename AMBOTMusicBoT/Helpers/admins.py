@@ -21,7 +21,7 @@ def admin_check(func: Callable) -> Callable:
         check = await app.get_chat_member(message.chat.id, message.from_user.id)
         if check.status not in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
             return await message.reply_text(
-                "😄𝙔𝙤𝙪'𝙖𝙧𝙚 𝙉𝙤𝙩 𝘼𝙣 MiHRK 𝘼𝙙𝙢𝙞𝙣, 𝙋𝙡𝙚𝙖𝙨𝙚 𝙎𝙩𝙖𝙮 𝙄𝙣 𝙔𝙤𝙪𝙧 𝙇𝙞𝙢𝙞𝙩𝙨.😄"
+                "😄𝙔𝙤𝙪'𝙖𝙧𝙚 𝙉𝙤𝙩 𝘼𝙣 𝙏𝙚𝙖𝙢 𝙎𝙪𝙥𝙚𝙧𝙗𝙖𝙣 𝘼𝙙𝙢𝙞𝙣, 𝙋𝙡𝙚𝙖𝙨𝙚 𝙎𝙩𝙖𝙮 𝙄𝙣 𝙔𝙤𝙪𝙧 𝙇𝙞𝙢𝙞𝙩𝙨.😄"
             )
 
         admin = (
@@ -53,7 +53,7 @@ def admin_check_cb(func: Callable) -> Callable:
             return
         if check.status not in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
             return await query.answer(
-                "😄𝙔𝙤𝙪'𝙖𝙧𝙚 𝙉𝙤𝙩 𝘼𝙣 MiHRK 𝘼𝙙𝙢𝙞𝙣, 𝙋𝙡𝙚𝙖𝙨𝙚 𝙎𝙩𝙖𝙮 𝙄𝙣 𝙔𝙤𝙪𝙧 𝙇𝙞𝙢𝙞𝙩𝙨.😄",
+                "😄𝙔𝙤𝙪'𝙖𝙧𝙚 𝙉𝙤𝙩 𝘼𝙣 𝙏𝙚𝙖𝙢 𝙎𝙪𝙥𝙚𝙧𝙗𝙖𝙣 𝘼𝙙𝙢𝙞𝙣, 𝙋𝙡𝙚𝙖𝙨𝙚 𝙎𝙩𝙖𝙮 𝙄𝙣 𝙔𝙤𝙪𝙧 𝙇𝙞𝙢𝙞𝙩𝙨.😄",
                 show_alert=True,
             )
 
