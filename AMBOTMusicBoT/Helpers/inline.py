@@ -26,17 +26,6 @@ buttons = InlineKeyboardMarkup(
 )
 
 
-MUSIC = InlineKeyboardMarkup(
-    [
-        [
-            InlineKeyboardButton(text="▷", callback_data="resume_stream"),
-            InlineKeyboardButton(text="II", callback_data="pause_stream"),
-            InlineKeyboardButton(text="‣‣I", callback_data="skip_stream"),
-            InlineKeyboardButton(text="▢", callback_data="stop_stream"),
-        ]
-    ]
-)
-
 pm_buttons = [
     [
         InlineKeyboardButton(
