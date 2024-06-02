@@ -5,7 +5,6 @@ import os
 import time
 from pyrogram import Client, errors, filters
 from pyrogram.enums import ChatMemberStatus, ParseMode
-from pyromod import listen
 from pytgcalls import PyTgCalls
 import config
 
