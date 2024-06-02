@@ -19,6 +19,26 @@ async def res_str(_, message: Message):
     await stream_on(message.chat.id)
     await pytgcalls.resume_stream(message.chat.id)
     return await message.reply_text(
-        text=f"𝙎𝙩𝙧𝙚𝙖𝙢 𝙍𝙚𝙨𝙪𝙢𝙚𝙙\n│ \n└𝘽𝙮 : {message.from_user.mention} 🥀",
+        text=f"▶️ ᴍᴜsɪᴄ ᴘʟᴀʏᴇʀ sᴜᴄᴄᴇssғᴜʟʟʏ ʀᴇsᴜᴍᴇ\n│ \n└ʀᴇsᴜᴍᴇᴅ ʙʏ : {message.from_user.mention} 🥀",
         reply_markup=close_key,
     )
+
+@app.on_callback_query(filters.regex("resume_stream"))
+async def resume_stream_callback(client: Client, callback_query: CallbackQuery):
+    chat_id = callback_query.message.chat.id
+    user_id = callback_query.from_user.id
+    if not await admin_check(client, callback_query):
+        return await callback_query.answer("ʏᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ᴛʜᴇ ᴘᴇʀᴍɪꜱꜱɪᴏɴ ᴛᴏ ᴅᴏ ᴛʜᴀᴛ!", show_alert=True)
+
+    if await is_streaming(chat_id):
+        await callback_query.answer("ᴛʜᴇ ᴍᴜsɪᴄ ᴘʟᴀʏᴇʀ ɪꜱ ᴀʟʀᴇᴀᴅʏ ʀᴇꜱᴜᴍᴇᴅ!", show_alert=True)
+        return
+
+    await stream_on(chat_id)
+    await pytgcalls.resume_stream(chat_id)
+    await callback_query.edit_message_text(
+        text=f"▶️ ᴍᴜsɪᴄ ᴘʟᴀʏᴇʀ sᴜᴄᴄᴇssғᴜʟʟʏ ʀᴇsᴜᴍᴇ\n│ \n└ʀᴇsᴜᴍᴇᴅ ʙʏ : {callback_query.from_user.mention} 🥀",
+        reply_markup=close_key,
+    )
+
+    await callback_query.answer("ᴍᴜsɪᴄ ᴘʟᴀʏᴇʀ ʀᴇꜱᴜᴍᴇᴅ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ!")
