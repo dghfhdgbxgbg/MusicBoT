@@ -3,7 +3,7 @@ import asyncio
 import logging
 import os
 import time
-from pyrogram import Client, errors, filters
+from pyrogram import errors, filters
 from pyrogram.enums import ChatMemberStatus, ParseMode
 from pytgcalls import PyTgCalls
 import config
