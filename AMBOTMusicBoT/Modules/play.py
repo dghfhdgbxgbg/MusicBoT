@@ -59,7 +59,9 @@ async def play(_, message: Message):
         chat_name = message.chat.title if message.chat.title else "Private"
         chatid = message.chat.id if message.chat.id else "Private"
         await message.reply(f"ʜᴇʟʟᴏ {message.from_user.mention},\n{chat_name} , ᴅᴏ ɴᴏᴛ ʜᴀᴠᴇ ᴘᴇʀᴍɪꜱꜱɪᴏɴ ᴛᴏ ᴜꜱᴇ ᴛʜɪꜱ ʙᴏᴛ ᴛʜɪꜱ ɪꜱ ᴘʀɪᴠɪᴛᴇ ʙᴏᴛ.\nᴘʟᴇᴀꜱᴇ ᴀꜱᴋ ꜰᴏʀ ʜᴇʟᴘ ᴛᴏ ᴀᴜᴛʜ ʏᴏᴜʀ ɢʀᴏᴜᴘ : @ItsAMBOTs")
+        await asyncio.sleep(5)
         await message.reply(f"ʙʏᴇ @{BOT_USERNAME} ʟᴇᴀᴠɪɴɢ ᴛʜɪꜱ ɢʀᴏᴜᴘ ɢᴏᴏᴅ ʙʏᴇ ᴀʟʟ..")
+        await asyncio.sleep(3)
         await app.leave_chat(chatid)
         return
     AMBOT = await message.reply_text("🔍")
