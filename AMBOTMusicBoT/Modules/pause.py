@@ -4,6 +4,13 @@ from pyrogram.types import Message
 from pyrogram import Client, errors, filters
 from AMBOTMusicBoT import app, pytgcalls
 from AMBOTMusicBoT.Helpers import admin_check, close_key, is_streaming, stream_off
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
+from pyrogram.types import (
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    InlineQueryResultPhoto,
+)
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, CallbackQuery
 
 
 @app.on_message(filters.command(["pause"]) & filters.group)
