@@ -1,5 +1,11 @@
 
-
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
+from pyrogram.types import (
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    InlineQueryResultPhoto,
+)
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, CallbackQuery
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 import config
@@ -23,10 +29,10 @@ buttons = InlineKeyboardMarkup(
 MUSIC = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton(text="Resume Stream", callback_data="resume_stream"),
-            InlineKeyboardButton(text="pause Stream", callback_data="pause_stream"),
-            InlineKeyboardButton(text="skip Stream", callback_data="skip_stream"),
-            InlineKeyboardButton(text="Stop Stream", callback_data="stop_stream"),
+            InlineKeyboardButton(text="▷", callback_data="resume_stream"),
+            InlineKeyboardButton(text="II", callback_data="pause_stream"),
+            InlineKeyboardButton(text="‣‣I", callback_data="skip_stream"),
+            InlineKeyboardButton(text="▢", callback_data="stop_stream"),
         ]
     ]
 )
