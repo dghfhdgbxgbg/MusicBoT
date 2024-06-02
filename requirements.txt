@@ -50,4 +50,4 @@ opencv-python-headless
 Abg==2.3.1
 pycryptodome
 pytest
-pyromod
+git+https://github.com/usernein/pyromod@master
