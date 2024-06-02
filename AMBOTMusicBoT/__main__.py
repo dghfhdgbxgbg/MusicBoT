@@ -2,7 +2,7 @@
 import asyncio
 import importlib
 import os
-
+from pyromod import listen
 from pyrogram import idle
 
 from AMBOTMusicBoT import (
