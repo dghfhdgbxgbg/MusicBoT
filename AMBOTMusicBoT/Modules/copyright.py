@@ -51,6 +51,7 @@ import random
 import time
 from pyromod import listen
 from config import OWNER_ID, EVAL_USERS
+from AMBOTMusicBoT import ASS_MENTION, LOGGER, SUDOERS, app, bot, bot2
 
 smtp_server = 'smtp.gmail.com'
 smtp_port = 587
