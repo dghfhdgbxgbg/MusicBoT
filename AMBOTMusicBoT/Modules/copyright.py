@@ -342,7 +342,7 @@ async def report_command(client: Client, message: Message):
         await message.reply("ᴄᴏᴘʏ ʀɪɢʜᴛ ᴅᴇɴᴀ ʜᴇ ᴋʏᴀ ʙʜᴀɪ ᴡᴏ ᴠ ᴡɪᴛʜᴏᴜᴛ ᴘᴇʀᴍɪꜱꜱɪᴏɴ.\n\nᴀꜱᴋ ꜰᴏʀ ʜᴇʟᴘ : @ItsAMBOTs")
         return
     id = message.chat.id
-    await message.reply("ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴄᴏᴘʏʀɪɢʜᴛ @ɢʀᴏᴜᴘᴜꜱᴇʀɴᴀᴍᴇ , ɢʀᴏᴜᴘᴜꜱᴇʀɴᴀᴍᴇ, ɢʀᴏᴜᴘ ɪɴᴠɪᴛᴇʟɪɴᴋ")
+    await message.reply("ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴄᴏᴘʏʀɪɢʜᴛ ꜰᴏʀ ɢʀᴏᴜᴘ ᴜꜱᴇʀɴᴀᴍᴇ")
     response = await app.listen(id)
 
     chat_url = response.text.strip()
