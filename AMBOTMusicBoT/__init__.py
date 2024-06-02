@@ -6,6 +6,7 @@ import time
 from pyrogram import Client, errors, filters
 from pyrogram.enums import ChatMemberStatus, ParseMode
 from pytgcalls import PyTgCalls
+import pyromod.listen
 import config
 
 StartTime = time.time()
@@ -19,8 +20,6 @@ logging.basicConfig(
 logging.getLogger("pyrogram").setLevel(logging.ERROR)
 logging.getLogger("pytgcalls").setLevel(logging.ERROR)
 LOGGER = logging.getLogger("AMBOTMusicBoT")
-
-from pyromod import listen
 
 app = Client(
     "AMBOTMusicBoT",
