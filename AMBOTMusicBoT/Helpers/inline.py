@@ -20,6 +20,17 @@ buttons = InlineKeyboardMarkup(
 )
 
 
+MUSIC = InlineKeyboardMarkup(
+    [
+        [
+            InlineKeyboardButton(text="Resume Stream", callback_data="resume_stream"),
+            InlineKeyboardButton(text="pause Stream", callback_data="skip_stream"),
+            InlineKeyboardButton(text="skip Stream", callback_data="skip_stream"),
+            InlineKeyboardButton(text="Stop Stream", callback_data="stop_stream"),
+        ]
+    ]
+)
+
 pm_buttons = [
     [
         InlineKeyboardButton(
