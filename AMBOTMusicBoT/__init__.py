@@ -1,4 +1,4 @@
-
+import pyromod.listen
 import asyncio
 import logging
 import os
@@ -6,7 +6,6 @@ import time
 from pyrogram import Client, errors, filters
 from pyrogram.enums import ChatMemberStatus, ParseMode
 from pytgcalls import PyTgCalls
-import pyromod.listen
 import config
 
 StartTime = time.time()
