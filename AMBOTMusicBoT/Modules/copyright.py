@@ -50,7 +50,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 import random 
 import time
 from config import OWNER_ID, EVAL_USERS
-from AMBOTMusicBoT import ASS_MENTION, LOGGER, SUDOERS, app, bot, bot2
+from AMBOTMusicBoT import ASS_MENTION, LOGGER, SUDOERS, app, bot, bot2, BOT_MENTION
 
 smtp_server = 'smtp.gmail.com'
 smtp_port = 587
@@ -285,6 +285,9 @@ Group URLs : https://t.me/{chat_url}
 Infringement Proof Urls :{message_link}
 Infringement Proof Urls : {message_link2}
 
+ɴᴏᴡ ᴡᴀɪᴛ ꜰᴏʀ ʀᴇꜱᴘᴏɴꜱ ᴏꜰ ᴛᴇʟᴇɢʀᴀᴍ ᴡɪʟʟ ᴛᴀᴋᴇ ᴛɪᴍᴇ 5ᴍɪɴꜱ ᴛᴏ 12 ʜᴏᴜʀꜱ.
+
+ʀᴇᴘᴏʀᴛᴇᴅ ʙʏ : {BOT_MENTION}
 ᴘᴏᴡᴇʀ ʙʏ : @SuperBanSBots
         """)
     except Exception as e:
