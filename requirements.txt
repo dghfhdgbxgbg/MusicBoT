@@ -41,7 +41,7 @@ search-engine-parser
 pydub
 pymediainfo
 tracemoepy
-googlesearch-python== 1.0.1
+googlesearch-python
 APScheduler==3.7.0
 pytube
 ujson
