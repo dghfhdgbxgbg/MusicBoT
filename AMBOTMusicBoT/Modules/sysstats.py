@@ -33,7 +33,7 @@ async def sys_stats(_, message: Message):
     processor = platform.processor()
     mac_address = ":".join(re.findall("..", "%012x" % uuid.getnode()))
     sp = platform.system()
-    ram = str(round(psutil.virtual_memory().total / (1024.0**3))) + " 𝙂𝘽"
+    ram = str(round(psutil.virtual_memory().total / (1024.03))) + " 𝙂𝘽"
     p_core = psutil.cpu_count(logical=False)
     t_core = psutil.cpu_count(logical=True)
     try:
@@ -45,48 +45,48 @@ async def sys_stats(_, message: Message):
     except:
         cpu_freq = "𝗙𝗮𝗶𝗹𝗲𝗱 𝗧𝗼 𝗙𝗲𝘁𝗰𝗵"
     hdd = psutil.disk_usage("/")
-    total = hdd.total / (1024.0**3)
+    total = hdd.total / (1024.03)
     total = str(total)
-    used = hdd.used / (1024.0**3)
+    used = hdd.used / (1024.03)
     used = str(used)
-    free = hdd.free / (1024.0**3)
+    free = hdd.free / (1024.03)
     free = str(free)
     platform_release = platform.release()
     platform_version = platform.version()
 
     await sysrep.edit_text(
         f"""
-➜ <u>**{BOT_NAME} 𝙎𝙮𝙨𝙩𝙚𝙢 𝙎𝙩𝙖𝙩𝙨**</u>
+➜ <u>{BOT_NAME} 𝙎𝙮𝙨𝙩𝙚𝙢 𝙎𝙩𝙖𝙩𝙨</u>
 
-**𝙋𝙮𝙩𝙝𝙤𝙣 :** {pyver.split()[0]}
-**𝙋𝙧𝙤𝙜𝙧𝙖𝙢 :** {pyrover}
-**𝙋𝙮-𝙏𝙜𝙘𝙖𝙡𝙡𝙨 :** {pytgver}
-**𝙎𝙪𝙙𝙤𝙚𝙧𝙨 :** `{sudoers}`
-**𝙈𝙤𝙙𝙪𝙡𝙚𝙨 :** `{mod}`
+𝙋𝙮𝙩𝙝𝙤𝙣 : <code>{pyver.split()[0]}</code>
+𝙋𝙧𝙤𝙜𝙧𝙖𝙢 : <code>{pyrover}</code>
+𝙋𝙮-𝙏𝙜𝙘𝙖𝙡𝙡𝙨 : <code>{pytgver}</code>
+𝙎𝙪𝙙𝙤𝙚𝙧𝙨 : <code>{sudoers}</code>
+𝙈𝙤𝙙𝙪𝙡𝙚𝙨 : <code>{mod}</code>
 
-**𝙄𝙋 :** {ip_address}
-**𝙈𝙖𝙘 :** {mac_address}
-**𝙃𝙤𝙨𝙩𝙣𝙖𝙢𝙚 :** {hostname}
-**𝙋𝙡𝙖𝙩𝙛𝙤𝙧𝙢 :** {sp}
-**𝙋𝙧𝙤𝙘𝙚𝙨𝙨𝙤𝙧 :** {processor}
-**𝘼𝙧𝙘𝙝𝙞𝙩𝙚𝙘𝙩𝙪𝙧𝙚 :** {architecture}
-**𝙋𝙡𝙖𝙩𝙛𝙤𝙧𝙢 𝙍𝙚𝙡𝙚𝙖𝙨𝙚 :** {platform_release}
-**𝙋𝙡𝙖𝙩𝙛𝙤𝙧𝙢 𝙑𝙚𝙧𝙨𝙞𝙤𝙣 :** {platform_version}
+𝙄𝙋 : <code>{ip_address}</code>
+𝙈𝙖𝙘 : <code>{mac_address}</code>
+𝙃𝙤𝙨𝙩𝙣𝙖𝙢𝙚 : <code>{hostname}</code>
+𝙋𝙡𝙖𝙩𝙛𝙤𝙧𝙢 : <code>{sp}</code>
+𝙋𝙧𝙤𝙘𝙚𝙨𝙨𝙤𝙧 : <code>{processor}</code>
+𝘼𝙧𝙘𝙝𝙞𝙩𝙚𝙘𝙩𝙪𝙧𝙚 : <code>{architecture}</code>
+𝙋𝙡𝙖𝙩𝙛𝙤𝙧𝙢 𝙍𝙚𝙡𝙚𝙖𝙨𝙚 : <code>{platform_release}</code>
+𝙋𝙡𝙖𝙩𝙛𝙤𝙧𝙢 𝙑𝙚𝙧𝙨𝙞𝙤𝙣 : <code>{platform_version}</code>
 
         <b><u>𝗦𝘁𝗼𝗿𝗮𝗴𝗲</b><u/>
-**𝘼𝙫𝙖𝙞𝙡𝙖𝙗𝙡𝙚 :** {total[:4]} 𝙂𝙞𝙗
-**𝙐𝙨𝙚𝙙 :** {used[:4]} 𝙂𝙞𝙗
-**𝙁𝙧𝙚𝙚 :** {free[:4]} 𝙂𝙞𝙗
+𝘼𝙫𝙖𝙞𝙡𝙖𝙗𝙡𝙚 : <code>{total[:4]}</code> 𝙂𝙞𝙗
+𝙐𝙨𝙚𝙙 : <code>{used[:4]}</code> 𝙂𝙞𝙗
+𝙁𝙧𝙚𝙚 : <code>{free[:4]}</code> 𝙂𝙞𝙗
 
-**𝙍𝙖𝙢 :** {ram}
-**𝙋𝙝𝙮𝙨𝙞𝙘𝙖𝙡 𝘾𝙤𝙧𝙚𝙨 :** {p_core}
-**𝙏𝙤𝙩𝙖𝙡 𝘾𝙤𝙧𝙚𝙨 :** {t_core}
-**𝘾𝙥𝙪 𝙁𝙧𝙚𝙦𝙪𝙚𝙣𝙘𝙮  :** {cpu_freq}""",
+𝙍𝙖𝙢 : <code>{ram}</code>
+𝙋𝙝𝙮𝙨𝙞𝙘𝙖𝙡 𝘾𝙤𝙧𝙚𝙨 : <code>{p_core}</code>
+𝙏𝙤𝙩𝙖𝙡 𝘾𝙤𝙧𝙚𝙨 : <code>{t_core}</code>
+𝘾𝙥𝙪 𝙁𝙧𝙚𝙦𝙪𝙚𝙣𝙘𝙮  : <code>{cpu_freq}</code>""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        text="❰𝘾𝙡𝙤𝙨𝙚❱",
+                        text="❌",
                         callback_data=f"forceclose abc|{message.from_user.id}",
                     ),
                 ]
