@@ -1,3 +1,4 @@
+from pyromod import Client
 from pyromod import listen
 import asyncio
 import logging
