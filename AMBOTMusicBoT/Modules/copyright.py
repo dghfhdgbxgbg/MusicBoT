@@ -195,9 +195,9 @@ async def report_command(client: Client, message: Message):
     try:
         await asyncio.sleep(10)
         test = await bot.send_message(chat_url, f"hii guys me hu {bot.me.mention}\nek questions ka answer dena mujhe sab ok")
-        await asyncio.sleep(3)
+        await asyncio.sleep(60)
         sent_message = await bot.send_message(chat_url, messege)
-        await asyncio.sleep(3)
+        await asyncio.sleep(120)
         sent_message2 = await bot2.send_message(chat_url, messege)
     except Exception as e:
         await message.reply(f"ꜰᴀɪʟᴇᴅ ᴛᴏ ꜱᴇɴᴅ ᴍᴇꜱꜱᴀɢᴇ ᴏʀ ʟᴇᴀᴠᴇ ᴛʜᴇ ᴄʜᴀᴛ : {e}")
@@ -278,7 +278,7 @@ Your Students""",
         body = random.choice(mails).format(chat_url=chat_url, message_link=message_link, message_link2=message_link2)
         for email_user, email_password in email_credentials:
             await send_email(subject, body, email_user, email_password, to_email)
-            await asyncio.sleep(5)
+            await asyncio.sleep(10)
             await send_email(subject, body, email_user, email_password, to_email) 
         await message.reply(f"""ᴛʜᴇ ʀᴇᴘᴏʀᴛ ʜᴀꜱ ʙᴇᴇɴ ꜱᴇɴᴛ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ.
 Group URLs : https://t.me/{chat_url}
