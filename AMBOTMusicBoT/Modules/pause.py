@@ -3,6 +3,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 from pyrogram import Client, errors, filters
 from AMBOTMusicBoT import app, pytgcalls
+from AMBOTMusicBoT import BOT_USERNAME, app, AM, pytgcalls
 from AMBOTMusicBoT.Helpers import admin_check, close_key, is_streaming, stream_off
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from pyrogram.types import (
