@@ -40,10 +40,10 @@ from AMBOTMusicBoT.Helpers.active import add_active_chat, is_active_chat, stream
 from AMBOTMusicBoT.Helpers.downloaders import audio_dl
 from AMBOTMusicBoT.Helpers.errors import DurationLimitError
 from AMBOTMusicBoT.Helpers.gets import get_file_name, get_url
-from AMBOTMusicBoT.Helpers.inline import buttons, MUSIC
+from AMBOTMusicBoT.Helpers.inline import buttons
 from AMBOTMusicBoT.Helpers.queue import put
 from AMBOTMusicBoT.Helpers.thumbnails import gen_qthumb, gen_thumb
-
+from AMBOTMusicBoT.Modules.pause import MUSIC
 
 @app.on_message(
     filters.command(["play", "vplay", "p"])
