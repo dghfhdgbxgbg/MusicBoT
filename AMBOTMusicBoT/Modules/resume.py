@@ -1,6 +1,13 @@
 from pyrogram import Client, errors, filters
 from pyrogram import filters
 from pyrogram.types import Message
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
+from pyrogram.types import (
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    InlineQueryResultPhoto,
+)
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, CallbackQuery
 
 from AMBOTMusicBoT import app, pytgcalls
 from AMBOTMusicBoT.Helpers import admin_check, close_key, is_streaming, stream_on
