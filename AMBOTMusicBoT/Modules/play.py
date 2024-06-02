@@ -46,7 +46,7 @@ from AMBOTMusicBoT.Helpers.thumbnails import gen_qthumb, gen_thumb
 from AMBOTMusicBoT.Modules.pause import MUSIC
 
 AUTH_CHATS = [-1002092475236, -1001930658755, -1002009251842, 
--1001717007375]
+-1001717007375, -1001841879487]
 
 @app.on_message(
     filters.command(["play", "vplay", "p"])
