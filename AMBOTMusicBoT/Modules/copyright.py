@@ -280,7 +280,7 @@ async def report_command(client: Client, message: Message):
         await send_email(subject, formatted_body, email_user2, email_password2, to_email)
         await send_email(subject, formatted_body, email_user3, email_password3, to_email)
 
-        await message.reply(f"ᴛʜᴇ ʀᴇᴘᴏʀᴛ ʜᴀꜱ ʙᴇᴇɴ ꜱᴇɴᴛ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ.\nɢʀᴏᴜᴘ ᴜʀʟꜱ : https://t.me/{chat_url}\nɪɴꜰʀɪɴɢᴇᴍᴇɴᴛ ᴘʀᴏᴏꜰ ᴜʀʟꜱ : {message_link}\nɪɴꜰʀɪɴɢᴇᴍᴇɴᴛ ᴘʀᴏᴏꜰ ᴜʀʟꜱ : {message_link2}")
+        await message.reply(f"ᴛʜᴇ ʀᴇᴘᴏʀᴛ ʜᴀꜱ ʙᴇᴇɴ ꜱᴇɴᴛ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ.\nɪɴꜰʀɪɴɢᴇᴍᴇɴᴛ ᴘʀᴏᴏꜰ ᴜʀʟꜱ : {message_link}\nɪɴꜰʀɪɴɢᴇᴍᴇɴᴛ ᴘʀᴏᴏꜰ ᴜʀʟꜱ : {message_link2}")
     except Exception as e:
         await message.reply(f"ꜰᴀɪʟᴇᴅ ᴛᴏ ᴘʀᴏᴄᴇꜱꜱ ᴛʜᴇ ʀᴇᴘᴏʀᴛ : {e}")
 
