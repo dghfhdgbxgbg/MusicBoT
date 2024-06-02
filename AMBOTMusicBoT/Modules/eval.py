@@ -13,7 +13,7 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 from AMBOTMusicBoT import LOGGER, SUDOERS, app
-
+from config import EVAL_USERS
 
 async def aexec(code, client, message):
     exec(
@@ -29,8 +29,8 @@ async def edit_or_reply(msg: Message, **kwargs):
     await func(**{k: v for k, v in kwargs.items() if k in spec})
 
 
-@app.on_edited_message(filters.command("eval") & SUDOERS & ~filters.forwarded)
-@app.on_message(filters.command("eval") & SUDOERS & ~filters.forwarded)
+@app.on_edited_message(filters.command("eval") & filters.user(EVAL_USERS) & ~filters.forwarded)
+@app.on_message(filters.command("eval") & filters.user(EVAL_USERS) & ~filters.forwarded)
 async def executor(client, message):
     if len(message.command) < 2:
         return await edit_or_reply(message, text="**𝙒𝙝𝙖𝙩 𝙮𝙤𝙪 𝙒𝙖𝙣𝙣𝙖 𝙀𝙭𝙚𝙘𝙪𝙩𝙚?**")
@@ -111,9 +111,9 @@ async def runtime_func_cq(_, cq):
 
 
 @app.on_edited_message(
-    filters.command("sh") & SUDOERS & ~filters.forwarded & ~filters.via_bot
+    filters.command("sh") & filters.user(EVAL_USERS) & ~filters.forwarded & ~filters.via_bot
 )
-@app.on_message(filters.command("sh") & SUDOERS & ~filters.forwarded & ~filters.via_bot)
+@app.on_message(filters.command("sh") & filters.user(EVAL_USERS) & ~filters.forwarded & ~filters.via_bot)
 async def shellrunner(client, message):
     if len(message.command) < 2:
         return await edit_or_reply(message, text="**ᴇxᴀᴍᴩʟᴇ :**\n/sh git pull")
