@@ -20,6 +20,8 @@ logging.getLogger("pyrogram").setLevel(logging.ERROR)
 logging.getLogger("pytgcalls").setLevel(logging.ERROR)
 LOGGER = logging.getLogger("AMBOTMusicBoT")
 
+from pyromod import listen
+
 app = Client(
     "AMBOTMusicBoT",
     config.API_ID,
