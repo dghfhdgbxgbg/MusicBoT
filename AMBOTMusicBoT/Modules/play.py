@@ -33,7 +33,7 @@ from AMBOTMusicBoT.Helpers.active import add_active_chat, is_active_chat, stream
 from AMBOTMusicBoT.Helpers.downloaders import audio_dl
 from AMBOTMusicBoT.Helpers.errors import DurationLimitError
 from AMBOTMusicBoT.Helpers.gets import get_file_name, get_url
-from AMBOTMusicBoT.Helpers.inline import buttons
+from AMBOTMusicBoT.Helpers.inline import buttons, MUSIC
 from AMBOTMusicBoT.Helpers.queue import put
 from AMBOTMusicBoT.Helpers.thumbnails import gen_qthumb, gen_thumb
 
@@ -201,7 +201,7 @@ async def play(_, message: Message):
         await message.reply_photo(
             photo=qimg,
             caption=f"**⏳ 𝘼𝙙𝙙𝙚𝙙 𝙩𝙤 𝙌𝙪𝙚𝙪𝙚 𝙖𝙩 {position}**\n\n💡 **𝙏𝙞𝙩𝙡𝙚 :** [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n⏱ **𝘿𝙪𝙧𝙖𝙩𝙞𝙤𝙣 :** `{duration}` ᴍɪɴᴜᴛᴇs\n👤 **𝘼𝙙𝙙𝙚𝙙 𝘽𝙮 :** {ruser}",
-            reply_markup=buttons,
+            reply_markup=MUSIC,
         )
     else:
         stream = AudioPiped(file_path, audio_parameters=HighQualityAudio())
@@ -231,7 +231,7 @@ async def play(_, message: Message):
         await message.reply_photo(
             photo=imgt,
             caption=f"**📡 𝙎𝙩𝙖𝙧𝙩𝙚𝙙 𝙎𝙩𝙧𝙚𝙖𝙢𝙞𝙣𝙜 💡**\n\n💡 **𝙏𝙞𝙩𝙡𝙚 :** [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n👤 **𝙍𝙚𝙦𝙪𝙚𝙨𝙩𝙚𝙙 𝘽𝙮 :** {ruser}",
-            reply_markup=buttons,
+            reply_markup=MUSIC,
         )
 
     return await AMBOT.delete()
