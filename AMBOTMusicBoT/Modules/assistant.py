@@ -6,7 +6,7 @@ from pyrogram.types import Message
 from AMBOTMusicBoT import ASS_MENTION, LOGGER, SUDOERS, app, app2
 
 
-@app.on_message(filters.command(["asspfp", "setpfp"]) & SUDOERS)
+@app.on_message(filters.command(["asspfp"]) & SUDOERS)
 async def set_pfp(_, message: Message):
     if message.reply_to_message.photo:
         fuk = await message.reply_text("𝙉𝙤 𝘾𝙝𝙖𝙣𝙜𝙞𝙣𝙜 𝘼𝙨𝙨𝙞𝙨𝙩𝙖𝙣𝙩'𝙨 𝙋𝙧𝙤𝙛𝙞𝙡𝙚 𝙋𝙞𝙘...")
@@ -24,7 +24,7 @@ async def set_pfp(_, message: Message):
         )
 
 
-@app.on_message(filters.command(["delpfp", "delasspfp"]) & SUDOERS)
+@app.on_message(filters.command(["delpfp"]) & SUDOERS)
 async def set_pfp(_, message: Message):
     try:
         pfp = [p async for p in app2.get_chat_photos("me")]
@@ -35,7 +35,7 @@ async def set_pfp(_, message: Message):
         await message.reply_text("𝙁𝙖𝙞𝙡𝙚𝙙 𝙏𝙤 𝘿𝙚𝙡𝙚𝙩𝙚 𝘼𝙨𝙨𝙞𝙨𝙩𝙖𝙣𝙩'𝙨 𝙋𝙧𝙤𝙛𝙞𝙡𝙚 𝙋𝙞𝙘.")
 
 
-@app.on_message(filters.command(["assbio", "setbio"]) & SUDOERS)
+@app.on_message(filters.command(["assbio"]) & SUDOERS)
 async def set_bio(_, message: Message):
     msg = message.reply_to_message
     if msg:
@@ -55,7 +55,7 @@ async def set_bio(_, message: Message):
         )
 
 
-@app.on_message(filters.command(["assname", "setname"]) & SUDOERS)
+@app.on_message(filters.command(["assname"]) & SUDOERS)
 async def set_name(_, message: Message):
     msg = message.reply_to_message
     if msg:
