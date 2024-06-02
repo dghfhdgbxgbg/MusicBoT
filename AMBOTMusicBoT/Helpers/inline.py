@@ -74,7 +74,6 @@ helpmenu = [
 
         InlineKeyboardButton(text="©️", callback_data="AMBOT_cb copy"),
     ],  
-    ],
     [
         InlineKeyboardButton(text="🔙", callback_data="AMBOT_Home"),
         InlineKeyboardButton(text="❌", callback_data="close"),
