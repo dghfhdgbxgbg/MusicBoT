@@ -4,7 +4,7 @@ from pytgcalls.types import AudioPiped, HighQualityAudio, Update
 
 from AMBOTMusicBoT import BOT_ID, BOT_USERNAME, app, app2, AM, pytgcalls
 from AMBOTMusicBoT.Helpers import _clear_, buttons, gen_thumb
-
+from AMBOTMusicBoT.Modules.pause import MUSIC
 welcome = 20
 close = 30
 
