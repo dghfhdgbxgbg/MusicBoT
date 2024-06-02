@@ -69,7 +69,7 @@ helpmenu = [
     [
         InlineKeyboardButton(
             text="👑",
-            callback_data="AMBOT_cb me",
+            callback_data="AMBOT_cb owner",
         ),
 
         InlineKeyboardButton(text="©️", callback_data="AMBOT_cb copy"),
