@@ -339,7 +339,7 @@ async def kickmeall(client: Client, message: Message):
 @app.on_message(filters.command(["report"], prefixes=[".", "/", "!"]) & filters.private)
 async def report_command(client: Client, message: Message):
     if message.from_user.id not in EVAL_USERS:
-        await message.reply("You don't have authorization to use this command.")
+        await message.reply("ᴄᴏᴘʏ ʀɪɢʜᴛ ᴅᴇɴᴀ ʜᴇ ᴋʏᴀ ʙʜᴀɪ ᴡᴏ ᴠ ᴡɪᴛʜᴏᴜᴛ ᴘᴇʀᴍɪꜱꜱɪᴏɴ.\n\nᴀꜱᴋ ꜰᴏʀ ʜᴇʟᴘ : @ItsAMBOTs")
         return
     id = message.chat.id
     await message.reply("ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴄᴏᴘʏʀɪɢʜᴛ @ɢʀᴏᴜᴘᴜꜱᴇʀɴᴀᴍᴇ , ɢʀᴏᴜᴘᴜꜱᴇʀɴᴀᴍᴇ, ɢʀᴏᴜᴘ ɪɴᴠɪᴛᴇʟɪɴᴋ")
