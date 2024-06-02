@@ -16,6 +16,7 @@ from AMBOTMusicBoT import (
     app,
     app2,
     pytgcalls,
+    LOGGER_GROUP,
 )
 from AMBOTMusicBoT.Modules import ALL_MODULES
 
@@ -35,7 +36,7 @@ async def AMBOT_startup():
 
     try:
         await app.send_message(
-            SUNAME,
+            LOGGER_GROUP,
             f"❇ ᴀᴍʙᴏᴛ ᴍᴜꜱɪᴄ ❇\n\n⎋ ɪᴅ : `{BOT_ID}`\n⎋ ɴᴀᴍᴇ : {BOT_NAME}\n⎋ ᴜꜱᴇʀɴᴀᴍᴇ : @{BOT_USERNAME}",
         )
     except:
@@ -45,7 +46,7 @@ async def AMBOT_startup():
 
     try:
         await app2.send_message(
-            SUNAME,
+            LOGGER_GROUP,
             f"❇ ᴀᴍʙᴏᴛ ᴍᴜꜱɪᴄ ᴀꜱꜱ ❇\n\n⎋ ɪᴅ : `{ASS_ID}`\n⎋ ɴᴀᴍᴇ : {ASS_NAME}\n⎋ ᴜꜱᴇʀɴᴀᴍᴇ : @{ASS_USERNAME}",
         )
     except:
