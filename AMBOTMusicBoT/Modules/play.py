@@ -14,6 +14,13 @@ from pytgcalls import StreamType
 from pytgcalls.exceptions import NoActiveGroupCall, TelegramServerError, UnMuteNeeded
 from pytgcalls.types import AudioPiped, HighQualityAudio
 from youtube_search import YoutubeSearch
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
+from pyrogram.types import (
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    InlineQueryResultPhoto,
+)
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, CallbackQuery
 
 from config import DURATION_LIMIT
 from AMBOTMusicBoT import (
