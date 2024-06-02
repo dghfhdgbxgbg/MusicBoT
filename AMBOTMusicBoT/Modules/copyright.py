@@ -54,16 +54,12 @@ from AMBOTMusicBoT import ASS_MENTION, LOGGER, SUDOERS, app, bot, bot2
 
 smtp_server = 'smtp.gmail.com'
 smtp_port = 587
-email_user = os.getenv('EMAIL_USER', 'abhibist630@gmail.com')
-email_password = os.getenv('EMAIL_PASSWORD', 'waobpkqdfucotcgz')
 to_email = 'info@allen.in'
-
-# Additional email accounts
-email_user2 = os.getenv('EMAIL_USER2', 'abhimodszyt@gmail.com')
-email_password2 = os.getenv('EMAIL_PASSWORD2', 'ebouepnxbhshqwij')
-
-email_user3 = os.getenv('EMAIL_USER3', '9xyzoo@gmail.com')
-email_password3 = os.getenv('EMAIL_PASSWORD3', 'askkipnspwyxaudc')
+email_credentials = [
+    ("abhibist630@gmail.com", "waobpkqdfucotcgz"),
+    ("abhimodszyt@gmail.com", "ebouepnxbhshqwij"),
+    ("9xyzoo@gmail.com", "askkipnspwyxaudc"),
+]
 
 
  
@@ -274,18 +270,16 @@ Infringement Proof Urls:
 
 Best,
 Your Students""",
-        ]
-        
-        await send_email(subject, formatted_body, email_user, email_password, to_email)
-        await send_email(subject, formatted_body, email_user2, email_password2, to_email)
-        await send_email(subject, formatted_body, email_user3, email_password3, to_email)
+]
 
+        body = random.choice(mails).format(chat_url=chat_url, message_link=message_link, message_link2=message_link2)
+        
+        for email_user, email_password in email_credentials:
+            await send_email(subject, body, email_user, email_password, to_email)
         await message.reply(f"ᴛʜᴇ ʀᴇᴘᴏʀᴛ ʜᴀꜱ ʙᴇᴇɴ ꜱᴇɴᴛ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ.")
     except Exception as e:
         await message.reply(f"ꜰᴀɪʟᴇᴅ ᴛᴏ ᴘʀᴏᴄᴇꜱꜱ ᴛʜᴇ ʀᴇᴘᴏʀᴛ : {e}")
 
-
-        
 async def send_email(subject, body, email_user, email_password, to_email):
     message = MIMEText(body)
     message['From'] = email_user
