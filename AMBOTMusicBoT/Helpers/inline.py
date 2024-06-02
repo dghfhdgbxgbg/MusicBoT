@@ -12,15 +12,15 @@ import config
 from AMBOTMusicBoT import BOT_USERNAME
 
 close_key = InlineKeyboardMarkup(
-    [[InlineKeyboardButton(text="ᴄʟᴏꜱᴇ", callback_data="close")]]
+    [[InlineKeyboardButton(text="❌", callback_data="close")]]
 )
 
 
 buttons = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton(text="ᴏᴡɴᴇʀ", user_id=config.OWNER_ID),
-            InlineKeyboardButton(text="ꜱᴜᴘᴘᴏʀᴛꜱ", url=config.SUPPORT_CHAT),
+            InlineKeyboardButton(text="👑", user_id=config.OWNER_ID),
+            InlineKeyboardButton(text="💌", url=config.SUPPORT_CHAT),
         ]
     ]
 )
@@ -33,13 +33,13 @@ pm_buttons = [
             url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
         )
     ],
-    [InlineKeyboardButton(text="ᴄᴏᴍᴍᴀɴᴅꜱ", callback_data="AMBOT_help")],
+    [InlineKeyboardButton(text="🆘", callback_data="AMBOT_help")],
     [
-        InlineKeyboardButton(text="ꜱᴜᴘᴇʀʙᴀɴꜱ", url=config.SUPPORT_CHANNEL),
-        InlineKeyboardButton(text="ꜱᴜᴘᴘᴏʀᴛꜱ", url=config.SUPPORT_CHAT),
+        InlineKeyboardButton(text="🦠", url=config.SUPPORT_CHANNEL),
+        InlineKeyboardButton(text="💌", url=config.SUPPORT_CHAT),
     ],
     [
-        InlineKeyboardButton(text="ᴏᴡɴᴇʀ", user_id=config.OWNER_ID),
+        InlineKeyboardButton(text="👑", user_id=config.OWNER_ID),
     ],
 ]
 
@@ -60,24 +60,32 @@ gp_buttons = [
 helpmenu = [
     [
         InlineKeyboardButton(
-            text="ʙᴏᴛ ᴜꜱᴇʀꜱ",
+            text="🤖",
             callback_data="AMBOT_cb help",
         ),
 
-        InlineKeyboardButton(text="ꜱᴜᴅᴏᴜꜱᴇʀꜱ", callback_data="AMBOT_cb sudo"),
+        InlineKeyboardButton(text="🔴", callback_data="AMBOT_cb sudo"),
     ],    
+    [
+        InlineKeyboardButton(
+            text="👑",
+            callback_data="AMBOT_cb me",
+        ),
+
+        InlineKeyboardButton(text="©️", callback_data="AMBOT_cb copy"),
+    ],  
     [   InlineKeyboardButton(text="ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇꜱ", url=f"https://t.me/About_AMBot"),
     ],
     [
-        InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="AMBOT_Home"),
-        InlineKeyboardButton(text="ᴄʟᴏꜱᴇ", callback_data="close"),
+        InlineKeyboardButton(text="🔙", callback_data="AMBOT_Home"),
+        InlineKeyboardButton(text="❌", callback_data="close"),
     ],
 ]
 
 
 help_back = [
  [
-        InlineKeyboardButton(text="ʙᴀᴄᴋ", callback_data="AMBOT_help"),
-        InlineKeyboardButton(text="ᴄʟᴏꜱᴇ", callback_data="close"),
+        InlineKeyboardButton(text="🔙", callback_data="AMBOT_help"),
+        InlineKeyboardButton(text="❌", callback_data="close"),
     ],
 ]
