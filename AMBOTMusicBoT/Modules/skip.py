@@ -5,7 +5,7 @@ from pyrogram.types import Message
 from pytgcalls.types import AudioPiped, HighQualityAudio
 
 from AMBOTMusicBoT import BOT_USERNAME, app, AM, pytgcalls
-from AMBOTMusicBoT.Helpers import _clear_, admin_check, buttons, close_key, gen_thumb
+from AMBOTMusicBoT.Helpers import _clear_, admin_check, buttons, close_key, gen_thumb, MUSIC
 
 
 @app.on_message(filters.command(["skip", "next"]) & filters.group)
@@ -53,7 +53,7 @@ async def skip_str(_, message: Message):
         return await message.reply_photo(
             photo=img,
             caption=f"📡 ꜱᴛᴀʀᴛᴇᴅ ꜱᴛʀᴇᴀᴍɪɴɢ 💡\n\n💡ᴛɪᴛʟᴇ : [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n 👤ʀᴇQᴜᴇꜱᴛᴇᴅ ʙʏ: {req_by}",
-            reply_markup=buttons,
+            reply_markup=MUSIC,
         )
 
 @app.on_callback_query(filters.regex("skip_stream"))
@@ -101,7 +101,7 @@ async def skip_stream_callback(client: Client, callback_query: CallbackQuery):
         await callback_query.message.reply_photo(
             photo=img,
             caption=f"📡 ꜱᴛᴀʀᴛᴇᴅ ꜱᴛʀᴇᴀᴍɪɴɢ💡\n\n💡ᴛɪᴛʟᴇ : [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n 👤ʀᴇQᴜᴇꜱᴛᴇᴅ ʙʏ: {req_by}",
-            reply_markup=buttons,
+            reply_markup=MUSIC,
         )
 
         await callback_query.answer("ᴍᴜsɪᴄ ᴘʟᴀʏᴇʀ ꜱᴋɪᴘᴘᴇᴅ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ!")
