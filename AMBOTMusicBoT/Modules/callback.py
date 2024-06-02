@@ -213,6 +213,8 @@ async def open_hmenu(_, query: CallbackQuery):
         await query.edit_message_text(HELP_SUDO, reply_markup=keyboard)
     elif cb == "owner":
         await query.edit_message_text(HELP_DEV, reply_markup=keyboard)
+    elif cb == "copy":
+        await query.edit_message_text(COPY_DEV, reply_markup=keyboard)
 
 
 @app.on_callback_query(filters.regex("AMBOT_Home"))
