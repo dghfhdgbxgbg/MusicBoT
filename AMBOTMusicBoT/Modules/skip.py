@@ -3,6 +3,13 @@ from pyrogram import Client, errors, filters
 from pyrogram import filters
 from pyrogram.types import Message
 from pytgcalls.types import AudioPiped, HighQualityAudio
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
+from pyrogram.types import (
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    InlineQueryResultPhoto,
+)
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, CallbackQuery
 
 from AMBOTMusicBoT import BOT_USERNAME, app, AM, pytgcalls
 from AMBOTMusicBoT.Helpers import _clear_, admin_check, buttons, close_key, gen_thumb, MUSIC
