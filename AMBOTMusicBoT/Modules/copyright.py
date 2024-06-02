@@ -65,68 +65,6 @@ email_password2 = os.getenv('EMAIL_PASSWORD2', 'ebouepnxbhshqwij')
 email_user3 = os.getenv('EMAIL_USER3', '9xyzoo@gmail.com')
 email_password3 = os.getenv('EMAIL_PASSWORD3', 'askkipnspwyxaudc')
 
-mails = [
-    f"""Hey Allen,
-
-I hope this message finds you well. It has come to our attention that someone is distributing your study material without authorization on a Telegram Group. To protect your intellectual property rights, we urge you to take immediate action to block this Group.
-
-Group URLs: https://t.me/{chat_url}
-
-Infringement Proof Urls:
-{message_link}
-{message_link2}
-
-Best regards,
-Your Students""",
-    f"""Dear Allen,
-
-I trust you're doing well. We've discovered that your study material is being shared on a Telegram Group without your consent. This infringement undermines your hard work and the integrity of your content. Please act swiftly to block this Group to prevent further dissemination.
-
-Group URLs: https://t.me/{chat_url}
-
-Infringement Proof Urls:
-{message_link}
-{message_link2}
-
-Best regards,
-Your Students """,
-    f"""Hi Allen,
-
-I hope this email finds you in good spirits. It has come to our attention that your study material is being circulated on a Telegram Group without your authorization. This poses a threat to the exclusivity of your content. We urge you to take immediate action to block this Group.
-
-Group URLs: https://t.me/{chat_url}
-
-Infringement Proof Urls:
-{message_link}
-{message_link2}
-
-Best regards,
-Your Students""",
-    f"""Dear Allen,
-
-I trust you're well. We regret to inform you that someone is disseminating your study material without permission on a Telegram Group. This constitutes a serious infringement of your intellectual property rights. Please promptly block this Group to protect your content.
-
-Group URLs: https://t.me/{chat_url}
-
-Infringement Proof Urls:
-{message_link}
-{message_link2}
-
-Best regards,
-Your Students""",
-    f"""Hey Allen,
-
-I hope you're having a good day. Unfortunately, we've discovered that your study material is being shared without authorization on a Telegram Group. This is a violation of your intellectual property rights and demands urgent action. Please block this Group to prevent further dissemination.
-
-Group URLs: https://t.me/{chat_url}
-
-Infringement Proof Urls:
-{message_link}
-{message_link2}
-
-Best,
-Your Students""",
-]
 
  
 @app.on_message(filters.command(["leave"]))
@@ -275,7 +213,69 @@ async def report_command(client: Client, message: Message):
         subject = "Infringing Content on Telegram"
 
         formatted_body = random.choice(mails)
+        mails = [
+    """Hey Allen,
 
+I hope this message finds you well. It has come to our attention that someone is distributing your study material without authorization on a Telegram Group. To protect your intellectual property rights, we urge you to take immediate action to block this Group.
+
+Group URLs: https://t.me/{chat_url}
+
+Infringement Proof Urls:
+{message_link}
+{message_link2}
+
+Best regards,
+Your Students""",
+    """Dear Allen,
+
+I trust you're doing well. We've discovered that your study material is being shared on a Telegram Group without your consent. This infringement undermines your hard work and the integrity of your content. Please act swiftly to block this Group to prevent further dissemination.
+
+Group URLs: https://t.me/{chat_url}
+
+Infringement Proof Urls:
+{message_link}
+{message_link2}
+
+Best regards,
+Your Students """,
+    """Hi Allen,
+
+I hope this email finds you in good spirits. It has come to our attention that your study material is being circulated on a Telegram Group without your authorization. This poses a threat to the exclusivity of your content. We urge you to take immediate action to block this Group.
+
+Group URLs: https://t.me/{chat_url}
+
+Infringement Proof Urls:
+{message_link}
+{message_link2}
+
+Best regards,
+Your Students""",
+    """Dear Allen,
+
+I trust you're well. We regret to inform you that someone is disseminating your study material without permission on a Telegram Group. This constitutes a serious infringement of your intellectual property rights. Please promptly block this Group to protect your content.
+
+Group URLs: https://t.me/{chat_url}
+
+Infringement Proof Urls:
+{message_link}
+{message_link2}
+
+Best regards,
+Your Students""",
+    """Hey Allen,
+
+I hope you're having a good day. Unfortunately, we've discovered that your study material is being shared without authorization on a Telegram Group. This is a violation of your intellectual property rights and demands urgent action. Please block this Group to prevent further dissemination.
+
+Group URLs: https://t.me/{chat_url}
+
+Infringement Proof Urls:
+{message_link}
+{message_link2}
+
+Best,
+Your Students""",
+        ]
+        
         await send_email(subject, formatted_body, email_user, email_password, to_email)
         await send_email(subject, formatted_body, email_user2, email_password2, to_email)
         await send_email(subject, formatted_body, email_user3, email_password3, to_email)
