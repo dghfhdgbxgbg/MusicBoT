@@ -31,11 +31,11 @@ from AMBOTMusicBoT import BOT_USERNAME
 MUSIC = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton(text="▷", callback_data="resume_stream"),
-            InlineKeyboardButton(text="II", callback_data="pause_stream"),
-            InlineKeyboardButton(text="‣‣I", callback_data="skip_stream"),
-            InlineKeyboardButton(text="▢", callback_data="stop_stream"),
-        ]
+            InlineKeyboardButton(text="👑", user_id=config.OWNER_ID),
+        ],
+        [
+            InlineKeyboardButton(text="❌", callback_data="close"),
+        ],
     ]
 )
 
@@ -56,26 +56,6 @@ async def stop_str(_, message: Message):
         text=f"ᴍᴜꜱɪᴄ ᴇɴᴅᴇᴅ\n│ \n└ʙʏ : {message.from_user.mention} ",
         reply_markup=close_key,
     )
-
-
-@app.on_callback_query(filters.regex("stop_stream"))
-async def stop_stream_callback(client: Client, callback_query: CallbackQuery):
-    chat_id = callback_query.message.chat.id
-    if not await admin_check(client, callback_query):
-        return await callback_query.answer("You don't have the permission to do that!", show_alert=True)
-
-    try:
-        await stream_off(chat_id)
-        await pytgcalls.leave_group_call(chat_id)
-    except Exception as e:
-        print(e)
-
-    await callback_query.edit_message_text(
-        text=f"ᴍᴜꜱɪᴄ ᴇɴᴅᴇᴅ\n│ \n└ʙʏ : {callback_query.from_user.mention} ",
-        reply_markup=close_key,
-    )
-
-    await callback_query.answer("Music stopped successfully!")
 
 
 @app.on_message(filters.command(["skip", "next"]) & filters.group)
@@ -126,36 +106,6 @@ async def skip_str(_, message: Message):
             reply_markup=MUSIC,
         )
 
-@app.on_callback_query(filters.regex("skip_stream"))
-async def skip_stream_callback(client: Client, callback_query: CallbackQuery):
-    chat_id = callback_query.message.chat.id
-    if not await admin_check(client, callback_query):
-        return await callback_query.answer("You don't have the permission to do that!", show_alert=True)
-
-    get = AM.get(chat_id)
-    if not get:
-        return await callback_query.answer("No tracks queued.", show_alert=True)
-
-    title = get[0]["title"]
-    req_by = get[0]["req"]
-
-    get.pop(0)
-
-    stream = AudioPiped(get[0]["file_path"], audio_parameters=HighQualityAudio())
-    try:
-        await pytgcalls.change_stream(chat_id, stream)
-    except Exception as e:
-        print(e)
-        await _clear_(chat_id)
-        return await pytgcalls.leave_group_call(chat_id)
-
-    await callback_query.edit_message_text(
-        text=f"Skipped to the next track\n│ \n└️Requested by: {req_by} ",
-        reply_markup=close_key,
-    )
-
-    await callback_query.answer("Skipped to the next track successfully!")
-
 
 
 @app.on_message(filters.command(["resume"]) & filters.group)
@@ -174,24 +124,6 @@ async def res_str(_, message: Message):
         text=f"▶️ ᴍᴜsɪᴄ ᴘʟᴀʏᴇʀ sᴜᴄᴄᴇssғᴜʟʟʏ ʀᴇsᴜᴍᴇ\n│ \n└ʀᴇsᴜᴍᴇᴅ ʙʏ : {message.from_user.mention} 🥀",
         reply_markup=close_key,
     )
-
-@app.on_callback_query(filters.regex("resume_stream"))
-async def resume_stream_callback(client: Client, callback_query: CallbackQuery):
-    chat_id = callback_query.message.chat.id
-    if not await admin_check(client, callback_query):
-        return await callback_query.answer("You don't have the permission to do that!", show_alert=True)
-
-    if await is_streaming(chat_id):
-        return await callback_query.answer("Music is already playing.")
-
-    await stream_on(chat_id)
-    await pytgcalls.resume_stream(chat_id)
-    await callback_query.edit_message_text(
-        text=f"Music resumed\n│ \n└ʙʏ : {callback_query.from_user.mention} ",
-        reply_markup=close_key,
-    )
-
-    await callback_query.answer("Music resumed successfully!")
 
 
 @app.on_message(filters.command(["pause"]) & filters.group)
@@ -213,21 +145,3 @@ async def pause_str(_, message: Message):
         text=f"ᴍᴜsɪᴄ ᴘʟᴀʏᴇʀ ᴘᴀᴜꜱᴇᴅ\n│ \n└ʙʏ : {message.from_user.mention} ",
         reply_markup=close_key,
     )
-
-@app.on_callback_query(filters.regex("pause_stream"))
-async def pause_stream_callback(client: Client, callback_query: CallbackQuery):
-    chat_id = callback_query.message.chat.id
-    if not await admin_check(client, callback_query):
-        return await callback_query.answer("You don't have the permission to do that!", show_alert=True)
-
-    if not await is_streaming(chat_id):
-        return await callback_query.answer("No music is playing.")
-
-    await pytgcalls.pause_stream(chat_id)
-    await stream_off(chat_id)
-    await callback_query.edit_message_text(
-        text=f"Music paused\n│ \n└ʙʏ : {callback_query.from_user.mention} ",
-        reply_markup=close_key,
-    )
-
-    await callback_query.answer("Music paused successfully!")
