@@ -30,7 +30,7 @@ pm_buttons = [
     [
         InlineKeyboardButton(
             text="➕ ᴀᴅᴅ ᴍᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ",
-            url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
+            url=f"https://t.me/{BOT_USERNAME}?startgroup=s&admin=delete_messages+manage_video_chats+pin_messages+invite_users+ban_users",
         )
     ],
     [InlineKeyboardButton(text="🆘", callback_data="AMBOT_help")],
@@ -48,7 +48,7 @@ gp_buttons = [
     [
         InlineKeyboardButton(
             text="➕ ᴀᴅᴅ ᴍᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ",
-            url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
+            url=f"https://t.me/{BOT_USERNAME}?startgroup=s&admin=delete_messages+manage_video_chats+pin_messages+invite_users+ban_users",
         )
     ],
     [
@@ -74,7 +74,6 @@ helpmenu = [
 
         InlineKeyboardButton(text="©️", callback_data="AMBOT_cb copy"),
     ],  
-    [   InlineKeyboardButton(text="ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇꜱ", url=f"https://t.me/About_AMBot"),
     ],
     [
         InlineKeyboardButton(text="🔙", callback_data="AMBOT_Home"),
