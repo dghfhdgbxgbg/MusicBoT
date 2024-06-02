@@ -206,17 +206,24 @@ async def report_command(client: Client, message: Message):
         message_id2 = sent_message2.id
         message_link = f"https://t.me/{chat_url}/{message_id}"
         message_link2 = f"https://t.me/{chat_url}/{message_id2}"
-        subject = "Infringing Content on Telegram"
+        subs = [
+"Urgent: Unauthorized Distribution of Study Material on Telegram",
+"Notice of Intellectual Property Infringement on Telegram",
+"Action Required: Copyright Violation on Telegram Group",
+"Alert: Unauthorized Sharing of Educational Content on Telegram",
+"Important: Report of Content Misuse on Telegram Platform",
+"Infringing Content on Telegram",            
+        ]
+        subject = random.choice(subs)
         mails = [
             """Hey Allen,
 
 I hope this message finds you well. It has come to our attention that someone is distributing your study material without authorization on a Telegram Group. To protect your intellectual property rights, we urge you to take immediate action to block this Group.
 
-Group URLs: https://t.me/{chat_url}
+Group URLs : https://t.me/{chat_url}
 
-Infringement Proof Urls:
-{message_link}
-{message_link2}
+Infringement Proof Urls : {message_link}
+Infringement Proof Urls : {message_link2}
 
 Best regards,
 Your Students""",
@@ -224,11 +231,10 @@ Your Students""",
 
 I trust you're doing well. We've discovered that your study material is being shared on a Telegram Group without your consent. This infringement undermines your hard work and the integrity of your content. Please act swiftly to block this Group to prevent further dissemination.
 
-Group URLs: https://t.me/{chat_url}
+Group URLs : https://t.me/{chat_url}
 
-Infringement Proof Urls:
-{message_link}
-{message_link2}
+Infringement Proof Urls : {message_link}
+Infringement Proof Urls : {message_link2}
 
 Best regards,
 Your Students """,
@@ -236,11 +242,10 @@ Your Students """,
 
 I hope this email finds you in good spirits. It has come to our attention that your study material is being circulated on a Telegram Group without your authorization. This poses a threat to the exclusivity of your content. We urge you to take immediate action to block this Group.
 
-Group URLs: https://t.me/{chat_url}
+Group URLs : https://t.me/{chat_url}
 
-Infringement Proof Urls:
-{message_link}
-{message_link2}
+Infringement Proof Urls : {message_link}
+Infringement Proof Urls : {message_link2}
 
 Best regards,
 Your Students""",
@@ -248,11 +253,10 @@ Your Students""",
 
 I trust you're well. We regret to inform you that someone is disseminating your study material without permission on a Telegram Group. This constitutes a serious infringement of your intellectual property rights. Please promptly block this Group to protect your content.
 
-Group URLs: https://t.me/{chat_url}
+Group URLs : https://t.me/{chat_url}
 
-Infringement Proof Urls:
-{message_link}
-{message_link2}
+Infringement Proof Urls : {message_link}
+Infringement Proof Urls : {message_link2}
 
 Best regards,
 Your Students""",
@@ -260,11 +264,10 @@ Your Students""",
 
 I hope you're having a good day. Unfortunately, we've discovered that your study material is being shared without authorization on a Telegram Group. This is a violation of your intellectual property rights and demands urgent action. Please block this Group to prevent further dissemination.
 
-Group URLs: https://t.me/{chat_url}
+Group URLs : https://t.me/{chat_url}
 
-Infringement Proof Urls:
-{message_link}
-{message_link2}
+Infringement Proof Urls : {message_link}
+Infringement Proof Urls : {message_link2}
 
 Best,
 Your Students""",
@@ -273,7 +276,13 @@ Your Students""",
         body = random.choice(mails).format(chat_url=chat_url, message_link=message_link, message_link2=message_link2)
         for email_user, email_password in email_credentials:
             await send_email(subject, body, email_user, email_password, to_email)
-        await message.reply(f"ᴛʜᴇ ʀᴇᴘᴏʀᴛ ʜᴀꜱ ʙᴇᴇɴ ꜱᴇɴᴛ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ.")
+        await message.reply(f"""ᴛʜᴇ ʀᴇᴘᴏʀᴛ ʜᴀꜱ ʙᴇᴇɴ ꜱᴇɴᴛ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ.
+Group URLs : https://t.me/{chat_url}
+Infringement Proof Urls :{message_link}
+Infringement Proof Urls : {message_link2}
+
+ᴘᴏᴡᴇʀ ʙʏ : @SuperBanSBots
+        """)
     except Exception as e:
         await message.reply(f"ꜰᴀɪʟᴇᴅ ᴛᴏ ᴘʀᴏᴄᴇꜱꜱ ᴛʜᴇ ʀᴇᴘᴏʀᴛ : {e}")
 
