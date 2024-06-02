@@ -1,1 +1,1 @@
-worker: python ambot.py
+worker: bash start
