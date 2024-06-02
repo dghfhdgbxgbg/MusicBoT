@@ -45,6 +45,9 @@ from AMBOTMusicBoT.Helpers.queue import put
 from AMBOTMusicBoT.Helpers.thumbnails import gen_qthumb, gen_thumb
 from AMBOTMusicBoT.Modules.pause import MUSIC
 
+AUTH_CHATS = [-1002092475236, -1001930658755, -1002009251842, 
+-1001717007375]
+
 @app.on_message(
     filters.command(["play", "vplay", "p"])
     & filters.group
@@ -52,6 +55,11 @@ from AMBOTMusicBoT.Modules.pause import MUSIC
     & ~filters.via_bot
 )
 async def play(_, message: Message):
+    if message.chat.id not in AUTH_CHATS:
+        chat_name = message.chat.title if message.chat.title else "Private"
+        chatid = message.chat.id if message.chat.id else "Private"
+        await message.reply(f"{chat_name} ᴅᴏ ɴᴏᴛ ʜᴀᴠᴇ ᴘᴇʀᴍɪꜱꜱɪᴏɴ ᴛᴏ ᴜꜱᴇ ᴛʜɪꜱ ʙᴏᴛ.\nᴘʟᴇᴀꜱᴇ ᴀꜱᴋ ꜰᴏʀ ʜᴇʟᴘ ᴛᴏ ᴀᴜᴛʜ ʏᴏᴜʀ ɢʀᴏᴜᴘ : @ItsAMBOTs")
+        return
     AMBOT = await message.reply_text("🔍")
     try:
         await message.delete()
