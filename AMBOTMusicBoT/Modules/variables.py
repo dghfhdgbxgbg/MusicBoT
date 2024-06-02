@@ -15,22 +15,22 @@ async def get_vars(_, message: Message):
     try:
         await app.send_message(
             chat_id=int(config.OWNER_ID),
-            text=f"""<u>**{BOT_NAME} 𝗖𝗼𝗻𝗳𝗶𝗴 𝗩𝗮𝗿𝗶𝗮𝗯𝗹𝗲𝘀 :**</u>
+            text=f"""<u>{BOT_NAME} 𝗖𝗼𝗻𝗳𝗶𝗴 𝗩𝗮𝗿𝗶𝗮𝗯𝗹𝗲𝘀 :</u>
 
-**𝘼𝙥𝙞_𝙄𝙙 :** `{config.API_ID}`
-**𝘼𝙥𝙞_𝙃𝙖𝙨𝙝 :** `{config.API_HASH}`
+𝘼𝙥𝙞_𝙄𝙙 : <code>{config.API_ID}</code>
+𝘼𝙥𝙞_𝙃𝙖𝙨𝙝 : <code>{config.API_HASH}</code>
 
-**𝘽𝙤𝙩_𝙏𝙤𝙠𝙚𝙣 :** `{config.BOT_TOKEN}`
-**𝘿𝙪𝙧𝙖𝙩𝙞𝙤𝙣_𝙇𝙞𝙢𝙞𝙩𝙨 :** `{config.DURATION_LIMIT}`
+𝘽𝙤𝙩_𝙏𝙤𝙠𝙚𝙣 : <code>{config.BOT_TOKEN}</code>
+𝘿𝙪𝙧𝙖𝙩𝙞𝙤𝙣_𝙇𝙞𝙢𝙞𝙩𝙨 : <code>{config.DURATION_LIMIT}</code>
 
-**𝙊𝙬𝙣𝙚𝙧_𝙄𝙙 :** `{config.OWNER_ID}`
-**𝙎𝙪𝙙𝙤_𝙐𝙨𝙚𝙧𝙨 :** `{config.SUDO_USERS}`
+𝙊𝙬𝙣𝙚𝙧_𝙄𝙙 : <code>{config.OWNER_ID}</code>
+𝙎𝙪𝙙𝙤_𝙐𝙨𝙚𝙧𝙨 : <code>{config.SUDO_USERS}</code>
 
-**𝙋𝙞𝙣𝙜_𝙄𝙢𝙜 :** `{config.PING_IMG}`
-**𝙎𝙩𝙖𝙧𝙩_𝙞𝙢𝙜 :** `{config.START_IMG}`
-**𝙎𝙪𝙥𝙥𝙤𝙧𝙩_𝘾𝙝𝙖𝙩 :** `{config.SUPPORT_CHAT}`
+𝙋𝙞𝙣𝙜_𝙄𝙢𝙜 : <code>{config.PING_IMG}</code>
+𝙎𝙩𝙖𝙧𝙩_𝙞𝙢𝙜 : <code>{config.START_IMG}</code>
+𝙎𝙪𝙥𝙥𝙤𝙧𝙩_𝘾𝙝𝙖𝙩 : <code>{config.SUPPORT_CHAT}</code>
 
-**𝙎𝙚𝙨𝙨𝙞𝙤𝙣 :** `{config.SESSION}`""",
+𝙎𝙚𝙨𝙨𝙞𝙤𝙣 : <code>{config.SESSION}</code>""",
             disable_web_page_preview=True,
         )
     except:
