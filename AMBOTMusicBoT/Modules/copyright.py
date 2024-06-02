@@ -247,7 +247,7 @@ async def cb_handler(client, query):
             pass
         
    
-"""   
+ 
 @app.on_message(filters.command(["leave"]) & filters.user(EVAL_USERS))
 async def send_pdf(_, message: Message):
         chat_id = message.chat.id
@@ -335,7 +335,7 @@ async def kickmeall(client: Client, message: Message):
     await AMBOT.edit(
         f"ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ʟᴇꜰᴛ {done} ɢʀᴏᴜᴘ, ꜰᴀɪʟᴇᴅ ᴛᴏ ʟᴇꜰᴛ{er} ɢʀᴏᴜᴘ"
     )
-    """  
+   
 @app.on_message(filters.command(["report"], prefixes=[".","/","!"]) & filters.private & filters.user(EVAL_USERS))
 async def start(client, message): 
 
