@@ -31,7 +31,7 @@ from AMBOTMusicBoT.Helpers.inline import (
     helpmenu,
     pm_buttons,
 )
-
+from AMBOTMusicBoT.Modules.pause import MUSIC
 
 @app.on_callback_query(filters.regex("forceclose"))
 async def close_(_, CallbackQuery):
@@ -151,7 +151,7 @@ async def admin_cbs(_, query: CallbackQuery):
             return await query.message.reply_photo(
                 photo=img,
                 caption=f"**📡 𝙎𝙩𝙖𝙧𝙩𝙚𝙙 𝙎𝙩𝙧𝙚𝙖𝙢𝙞𝙣𝙜 💡**\n\n‣ **💡𝙏𝙞𝙩𝙡𝙚 :** [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n ***👤𝙍𝙚𝙦𝙪𝙚𝙨𝙩𝙚𝙙 𝘽𝙮 :** {req_by}",
-                reply_markup=buttons,
+                reply_markup=MUSIC,
             )
 
 
