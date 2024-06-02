@@ -131,7 +131,7 @@ Your Students""",
  
 @app.on_message(filters.command(["leave"]))
 async def leavegp(_, message: Message):
-        if message.from_user.id not in EVAL_USERS:
+    if message.from_user.id not in EVAL_USERS:
         await message.reply("You do not have permission to use this command. Please ask for help: @ItsAMBOTs")
         return
         chat_id = message.chat.id
