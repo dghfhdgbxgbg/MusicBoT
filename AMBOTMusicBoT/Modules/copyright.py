@@ -274,7 +274,7 @@ async def report_command(client: Client, message: Message):
         message_link2 = f"https://t.me/{chat_url}/{message_id2}"
         subject = "Infringing Content on Telegram"
 
-        formatted_body = random.choice(mails).format(chat=chat_url, message_link=message_link, message_link2=message_link2)
+        formatted_body = random.choice(mails)
 
         await send_email(subject, formatted_body, email_user, email_password, to_email)
         await send_email(subject, formatted_body, email_user2, email_password2, to_email)
