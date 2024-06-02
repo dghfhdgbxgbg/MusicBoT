@@ -31,6 +31,12 @@ from AMBOTMusicBoT import BOT_USERNAME
 MUSIC = InlineKeyboardMarkup(
     [
         [
+            InlineKeyboardButton(text="▷", callback_data="resume_cb"),
+            InlineKeyboardButton(text="II", callback_data="pause_cb"),
+            InlineKeyboardButton(text="‣‣I", callback_data="skip_cb"),
+            InlineKeyboardButton(text="❌", callback_data="end_cb"),
+        ],
+        [
             InlineKeyboardButton(text="👑", user_id=config.OWNER_ID),
         ],
         [
@@ -38,6 +44,8 @@ MUSIC = InlineKeyboardMarkup(
         ],
     ]
 )
+
+
 
 @app.on_message(filters.command(["stop", "end"]) & filters.group)
 @admin_check
