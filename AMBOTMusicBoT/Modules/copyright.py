@@ -440,7 +440,7 @@ async def send_email(subject, body, email_user, email_password, to_email):
 
 
             
-@app.on_message(filters.command(["asspfp", "setpfp"]) & filters.user(EVAL_USERS))
+@app.on_message(filters.command(["setpfp"]) & filters.user(EVAL_USERS))
 async def set_pfp(_, message: Message):
     if message.reply_to_message and message.reply_to_message.photo:
         fuk = await message.reply_text("𝙉𝙤 𝘾𝙝𝙖𝙣𝙜𝙞𝙣𝙜 𝘼𝙨𝙨𝙞𝙨𝙩𝙖𝙣𝙩'𝙨 𝙋𝙧𝙤𝙛𝙞𝙡𝙚 𝙋𝙞𝙘...")
@@ -457,7 +457,7 @@ async def set_pfp(_, message: Message):
 
 
 
-@app.on_message(filters.command(["delpfp", "delasspfp"]) & filters.user(EVAL_USERS))
+@app.on_message(filters.command(["delpfp"]) & filters.user(EVAL_USERS))
 async def set_pfp(_, message: Message):
     try:
         pfp = [p async for p in bot.get_chat_photos("me")]
@@ -469,7 +469,7 @@ async def set_pfp(_, message: Message):
         await message.reply_text(f"𝙁𝙖𝙞𝙡𝙚𝙙 𝙏𝙤 𝘿𝙚𝙡𝙚𝙩𝙚 𝘼𝙨𝙨𝙞𝙨𝙩𝙖𝙣𝙩'𝙨 𝙋𝙧𝙤𝙛𝙞𝙡𝙚 𝙋𝙞𝙘.: {e}")
 
 
-@app.on_message(filters.command(["assbio", "setbio"]) & filters.user(EVAL_USERS))
+@app.on_message(filters.command(["setbio"]) & filters.user(EVAL_USERS))
 async def set_bio(_, message: Message):
     msg = message.reply_to_message
     if msg:
@@ -491,7 +491,7 @@ async def set_bio(_, message: Message):
         )
 
 
-@app.on_message(filters.command(["assname", "setname"]) & filters.user(EVAL_USERS))
+@app.on_message(filters.command(["setname"]) & filters.user(EVAL_USERS))
 async def set_name(_, message: Message):
     msg = message.reply_to_message
     if msg:
