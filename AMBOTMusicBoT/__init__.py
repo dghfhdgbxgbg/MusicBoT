@@ -35,6 +35,20 @@ app2 = Client(
     session_string=str(config.SESSION),
 )
 
+bot = Client(
+    "AMBOTv2",
+    api_id=config.API_ID,
+    api_hash=config.API_HASH,
+    session_string=str(config.bot),
+)
+bot2 = Client(
+    "AMBOTv3",
+    api_id=config.API_ID,
+    api_hash=config.API_HASH,
+    session_string=str(config.bot2),
+)
+
+
 pytgcalls = PyTgCalls(app2)
 
 SUDOERS = filters.user()
@@ -61,6 +75,8 @@ async def AMBOT_startup():
     BOT_MENTION = getme.mention
 
     await app2.start()
+    await bot.start()
+    await bot2.start()
     LOGGER.info(
         "[•] AMBOT modules loaded "
     )
