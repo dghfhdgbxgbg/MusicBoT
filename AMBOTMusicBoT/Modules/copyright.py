@@ -237,44 +237,11 @@ async def report_command(client: Client, message: Message):
     if message.from_user.id not in EVAL_USERS:
         await message.reply("You do not have permission to use this command. Please ask for help: @ItsAMBOTs")
         return
-
     await message.reply("Please provide the group username or invite link.")
     response = await client.listen(message.chat.id)
-
     chat_url = response.text.strip()
-    if chat_url.startswith("https://t.me/+"):
-        chat_url = chat_url.replace("https://t.me/+", "https://t.me/joinchat/")
-    if chat_url.startswith("@"):
-        chat_url = chat_url[1:]
-
-    async def join_chat(bot, chat_url):
-        try:
-            await bot.get_chat(chat_url)
-            already_in_chat = True
-        except Exception:
-            already_in_chat = False
-
-        if not already_in_chat:
-            try:
-                await bot.join_chat(chat_url)
-                return True
-            except Exception as e:
-                await message.reply(f"Error joining chat with bot: {str(e)}")
-                return False
-        return True
-
-    try:
-        bot_joined = await join_chat(bot, chat_url)
-        bot2_joined = await join_chat(bot2, chat_url)
-
-        if bot_joined and bot2_joined:
-            await message.reply(f"Bots have joined the chat: {chat_url}")
-        else:
-            await message.reply(f"One or both bots could not join the chat: {chat_url}")
-
-    except Exception as e:
-        await message.reply(f"An error occurred: {str(e)}")
-
+    await bot.join_chat(chat_url)
+    await bot2.join_chat(chat_url)
     messege = """𝘈𝘓𝘓𝘌𝘕 
 
     2. Stored food of red algae is similar to :- 
