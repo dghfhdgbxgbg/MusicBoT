@@ -11,7 +11,7 @@ from pytgcalls.__version__ import __version__ as pytgver
 import config
 from AMBOTMusicBoT import app
 from AMBOTMusicBoT.database.db import get_served_chats, get_served_users
-from config import BANNED_USERS, PING_IMG
+from config import PING_IMG
 
 
 @app.on_message(filters.command(["gstats"]) & filters.group)
