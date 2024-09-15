@@ -8,7 +8,7 @@ import config
 from AMBOTMusicBoT import BOT_MENTION, BOT_NAME, app
 from AMBOTMusicBoT.Helpers import gp_buttons, pm_buttons
 from AMBOTMusicBoT.Helpers.dossier import *
-
+from AMBOTMusicBoT.database.db import *
 
 @app.on_message(filters.command(["start"]) & ~filters.forwarded)
 @app.on_edited_message(filters.command(["start"]) & ~filters.forwarded)
@@ -61,6 +61,7 @@ async def AMBOT_st(_, message: Message):
                     reply_markup=key,
                 )
         else:
+            await add_served_user(message.from_user.id)
             await message.reply_photo(
                 photo=config.START_IMG,
                 caption=PM_START_TEXT.format(
@@ -70,6 +71,7 @@ async def AMBOT_st(_, message: Message):
                 reply_markup=InlineKeyboardMarkup(pm_buttons),
             )
     else:
+        await add_served_chat(message.chat.id)
         await message.reply_photo(
             photo=config.START_IMG,
             caption=START_TEXT.format(
