@@ -4,6 +4,14 @@ import os
 
 from yt_dlp import YoutubeDL
 
+def cookies():
+    cookie_dir = "AMBOTMusicBoT/cookies"
+    cookies_files = [f for f in os.listdir(cookie_dir) if f.endswith(".txt")]
+
+    cookie_file = os.path.join(cookie_dir, random.choice(cookies_files))
+    return cookie_file
+
+
 ydl_opts = {
     "format": "bestaudio/best",
     "outtmpl": "downloads/%(id)s.%(ext)s",
@@ -11,6 +19,7 @@ ydl_opts = {
     "nocheckcertificate": True,
     "quiet": True,
     "no_warnings": True,
+    "cookiefile": cookies(),
     "prefer_ffmpeg": True,
     "postprocessors": [
         {
