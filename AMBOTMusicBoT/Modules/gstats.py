@@ -15,7 +15,7 @@ from config import PING_IMG
 
 
 @app.on_message(filters.command(["gstats"]) & filters.group)
-async def stats_global(client, message: Message, _):
+async def gstats(client, message: Message):
     served_chats = len(await get_served_chats())
     served_users = len(await get_served_users())
     await message.reply_photo(
