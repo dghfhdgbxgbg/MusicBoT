@@ -1,6 +1,7 @@
 
 
 import os
+import random
 
 from yt_dlp import YoutubeDL
 
