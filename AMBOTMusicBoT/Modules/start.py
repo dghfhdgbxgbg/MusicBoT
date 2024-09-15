@@ -10,6 +10,12 @@ from AMBOTMusicBoT.Helpers import gp_buttons, pm_buttons
 from AMBOTMusicBoT.Helpers.dossier import *
 from AMBOTMusicBoT.database.db import *
 
+@app.on_message(filters.command(["hii","hello","bro"], prefixes=[""]) & filters.group)
+async def group_add(client, message: Message):
+    chat_id = message.chat.id
+    await add_served_chat(chat_id)
+
+
 @app.on_message(filters.command(["start"]) & ~filters.forwarded)
 @app.on_edited_message(filters.command(["start"]) & ~filters.forwarded)
 async def AMBOT_st(_, message: Message):
