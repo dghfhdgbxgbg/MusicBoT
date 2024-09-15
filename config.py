@@ -10,7 +10,7 @@ API_HASH = getenv("API_HASH","4e984ea35f854762dcde906dce426c2d")
 
 BOT_TOKEN = getenv("BOT_TOKEN", "7067769184:AAG7Fj7X3LJ0lZFneSKs0312V_CbhfLFee0")
 DURATION_LIMIT = int(getenv("DURATION_LIMIT", "900"))
-
+MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://IYIusic:P8QtOotbu7QrXVNI@iyiusic.dlxc3.mongodb.net/?retryWrites=true&w=majority&appName=IYIusic")
 OWNER_ID = int(getenv("OWNER_ID","7045191057"))
 EVAL_USERS = list(map(int, getenv("EVAL_USERS", "7045191057").split()))
 
