@@ -5,7 +5,7 @@ numpy==1.26.3
 pillow==9.5.0
 psutil
 pyrogram 
-py-tgcalls==0.9.7
+git+https://github.com/dghfhdgbxgbg/pytgcalls097
 python-dotenv==1.0.0
 tgcrypto==1.2.5
 speedtest-cli==2.1.3
